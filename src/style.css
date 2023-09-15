@@ -30,3 +30,21 @@ li {
   border: 2px solid #f903b3;
   border-radius: 22px;
 }
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature img {
+  margin-right: 14 px;
+  height: px;
+  width: 88px;
+}
+.currently-temperature strong {
+  color: rgb(65, 46, 91);
+  font-size: 68px;
+  font-weight: 600px;
+  line-height: 1;
+}
+.currently-temperature .units {
+  position: relative;
+  font-size: 18px;
+}
