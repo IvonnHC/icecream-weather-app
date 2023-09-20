@@ -47,7 +47,6 @@ li:first-letter {
   cursor: pointer;
   background: rgb(65, 46, 91);
   color: white;
-
   font-family: "Raleway", sans-serif;
   box-shadow: 2px 2px 4px #d2d2d3;
 }
@@ -68,7 +67,6 @@ li:first-letter {
 .weather-app {
   padding: 20px;
   border: 6px solid rgb(255, 255, 255);
-
   border-radius: 22px;
 }
 .overview {
@@ -93,4 +91,20 @@ li:first-letter {
 .currently-temperature .units {
   position: relative;
   font-size: 18px;
+}
+.weather-forecast {
+  margin: top 20px;
+  text-align: center;
+  color: rgb(65, 46, 91);
+  font-family: "Raleway", sans-serif;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.4;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.4;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
 }
