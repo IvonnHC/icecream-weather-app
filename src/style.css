@@ -50,23 +50,33 @@ li:first-letter {
   font-family: "Raleway", sans-serif;
   box-shadow: 2px 2px 4px #d2d2d3;
 }
+.container {
+  box-shadow: 5px 5px 10px #d1b4f9;
+  border: 2px solid rgb(200, 172, 231);
+  border-radius: 22px;
+  max-width: 600px;
+  margin: 30px auto;
+}
 
 .weather-app-wrapper {
   max-width: 600px;
-  margin: 30px auto;
-  border: 2px solid rgb(200, 172, 231);
+
   border-radius: 22px;
+  border: 6px solid rgb(255, 255, 255);
   background: radial-gradient(
     344px at 1.4% 0%,
     rgb(242, 185, 252) 19.3%,
     rgb(250, 254, 190) 80.7%
   );
-  box-shadow: 5px 5px 10px #d1b4f9;
+}
+.by {
+  max-width: 600px;
+  margin: 30px auto;
 }
 
 .weather-app {
   padding: 20px;
-  border: 6px solid rgb(255, 255, 255);
+
   border-radius: 22px;
 }
 .overview {

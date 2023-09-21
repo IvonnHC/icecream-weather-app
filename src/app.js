@@ -41,9 +41,7 @@ function displayForecast() {
               12º 
               </span>
             </div>
-
           </div>
-
         </div>
         `;
   });
