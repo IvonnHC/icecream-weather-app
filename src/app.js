@@ -72,7 +72,7 @@ function displayTemperature(response) {
   );
   iconElement.innerHTML = setAttribute(
     "alt",
-    `${response.data.weather[0].description}`
+    response.data.weather[0].description
   );
 }
 function search(city) {
