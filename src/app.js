@@ -8,6 +8,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   let days = [
     "Sunday",
     "Monday",
@@ -17,46 +18,13 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
-}
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-          <div class="col"> 
-            <div class="weather-forecast-date">${day}</div>
-            <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42"
-            /> 
-            <div class="weather-forecast-temperature"> 
-              <span class*="weather-forecast-temperature-max">
-              18º
-              </span> | 
-              <span class="weather-forecast-temperature-min">
-              12º 
-              </span>
-            </div>
-          </div>
-        `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-
-  console.log(apiUrl);
+  return `${day} ${hours} ${minutes}`;
 }
 
 function displayTemperature(response) {
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -65,56 +33,20 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.main.temp;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  cityElement.innerHTML = response.data.name;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.coord);
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-function search(city) {
-  let apiKey = "8a1e5b0b40430d8fd49a110a48ce795d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
-}
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
-}
+let apiKey = "9a8foc8f3468b6t4cb16fa567b1af0f3";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=oslo&key=${apiKey}&units=metric`;
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
-let fahrenhaitLink = document.querySelector("#fahrenheit-link");
-fahrenhaitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-search("Oslo");
-
-displayForecast();
+axios.get(apiUrl).then(displayTemperature);
