@@ -102,6 +102,17 @@ li:first-letter {
   position: relative;
   font-size: 18px;
 }
+.weather-temperature .active {
+  color: rgb(65, 46, 91);
+  cursor: default;
+  font-weight: bolder;
+  text-decoration: none;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
 .weather-forecast {
   margin: top 20px;
   text-align: center;
