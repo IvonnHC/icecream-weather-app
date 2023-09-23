@@ -114,7 +114,7 @@ li:first-letter {
 }
 
 .weather-forecast {
-  margin: top 20px;
+  margin: 20px;
   text-align: center;
   color: rgb(65, 46, 91);
   font-family: "Raleway", sans-serif;
