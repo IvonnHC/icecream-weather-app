@@ -10,93 +10,93 @@
       crossorigin="anonymous"
     />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Raleway:wght@200&display=swap" rel="stylesheet">
-
-
-
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Raleway:wght@200&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    
+
     <title>🌈RainboWeather</title>
   </head>
   <body>
     <div class="container">
-        <div Class="weather-app-wrapper">
-        <div Class="weather-app">
-        <form id="search-form"  class="mb-3">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
             <div class="row">
-                <div class="col-6">
-                    <input 
-                    type="search"
-                    placeholder="City"
-                    id="city-input"
-                    class="form-control"
-                    required/>
-
-                </div>
-                <div class="col-3">
-                    <input 
-                    type="submit"
-                    value="Search"
-                    class="btn btn-primary w-100 location-btn"/>
-
-                </div>
-
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="City"
+                  id="city-input"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100 location-btn"
+                />
+              </div>
             </div>
+          </form>
 
-        </form>
-
-            <div class="overview">
-      <h1 id="city"></h1>
-      <ul class="currently-day">
-        <li ><span id=date> </span></li>
-        <li id="description"></li>
-      </ul>
-      </div>
-      <div class="row">
-        <div class="col-6">
-            <div class="d-flex weather-temperature">
-          <img
-            class="d-flex main-weather-image"
-            src=".."
-            id="icon"
-          />
-          <div class="d-flex currently-temperature">
-          <strong id="temperature"></strong> 
-          <span class=units><a href="#" id="celsius-link" class="active"> ºC </a> | <a href="#" id="fahrenheit-link">F</a>
-          </span>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul class="currently-day">
+              <li><span id="date"> </span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img class="d-flex main-weather-image" src=".." id="icon" />
+                <div class="d-flex currently-temperature">
+                  <strong id="temperature"></strong>
+                  <span class="units"
+                    ><a href="#" id="celsius-link" class="active"> ºC </a> |
+                    <a href="#" id="fahrenheit-link">F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span>km/h</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <ul>
-            <li>Humidity: <span id="humidity"></span> %</li>
-            <li>Wind: <span id="wind"></span>km/h</li>
-          </ul>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
-      </div>
-      <div class="weather-forecast" id ="forecast">
+
+      <div class="by">
+        <small>
+          <a
+            href="https://github.com/IvonnHC/icecream-weather-app/commit/4140570357d3779c57e9dc03657fe0f8eb0b9599"
+            target="_blank"
+          >
+            Open-source code</a
+          >
+          <small>by Ivonn Hogstad Cortes </small>
+        </small>
       </div>
     </div>
-  
-    </div>
-<div class="by">
-   <small>
-        <a 
-        href="https://github.com/IvonnHC/icecream-weather-app/commit/4140570357d3779c57e9dc03657fe0f8eb0b9599" 
-        target="_blank"> Open-source code</a> by Ivonn Hogstad Cortes <small>
-    </small>
-</div>
     <script src="src/app.js"></script>
   </body>
 </html>
