@@ -87,7 +87,7 @@ li:first-letter {
 }
 .weather-temperature img {
   margin-right: 14 px;
-  height: px;
+
   width: 88px;
 }
 .currently-temperature strong {
@@ -121,7 +121,7 @@ li:first-letter {
 }
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .weather-forecast-temperature-min {
   opacity: 0.4;
