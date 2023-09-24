@@ -1,15 +1,17 @@
 h1 {
-  -webkit-text-stroke: 0.8px rgb(145, 109, 185);
+  -webkit-text-stroke: 0.9px rgb(145, 109, 185);
   color: rgb(200, 172, 231);
   font-family: "Raleway", sans-serif;
   font-size: 52px;
   font-weight: 600;
   line-height: 28px;
   margin-bottom: 0;
+  padding-top: 15px;
 }
 ul {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 li {
   list-style: none;
@@ -17,14 +19,21 @@ li {
   padding: 0;
   color: rgb(65, 46, 91);
   font-size: 16px;
-
   font-weight: 500;
   line-height: 19px;
-
   font-family: "Raleway", sans-serif;
 }
 li:first-letter {
   text-transform: capitalize;
+}
+.rainbow-weather {
+  color: rgb(103, 83, 132);
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 0;
+  padding: 20px 20px 0px 20px;
 }
 
 .form-control {
@@ -56,6 +65,7 @@ li:first-letter {
   border-radius: 22px;
   max-width: 600px;
   margin: 30px auto;
+  padding: 0%;
 }
 
 .weather-app-wrapper {
@@ -80,7 +90,8 @@ li:first-letter {
   border-radius: 22px;
 }
 .overview {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 .currently-day {
   padding-top: 15px;
